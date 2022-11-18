@@ -1,0 +1,16 @@
+x = 120
+
+def fib(y):
+    x=[1,1]
+    for i in range(y-2):
+        x.append(x[i]+x[i+1])
+    return x[y-1]
+
+print(fib(x))
+
+def fibre(k):
+    if k<=1:
+        return k
+    return fibre(k-1)+fibre(k-2)
+
+print(f"This - {fibre(x)}")
