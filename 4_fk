@@ -1,0 +1,21 @@
+class Item():
+    def __init__(self,value,weight):
+        self.weight=weight
+        self.value=value
+
+def knapfractional(arr,cap):
+    arr.sort(key=lambda x:(x.value/x.weight),reverse=True)
+    valuek = 0.0
+    for x in arr:
+        if cap>=x.weight:
+            cap -=x.weight
+            valuek +=x.value
+        else:
+            valuek += x.value * cap/x.weight
+            break
+    return valuek
+
+
+arr=[Item(60, 10), Item(100, 20), Item(120, 30)]
+
+print(knapfractional(arr,50))
